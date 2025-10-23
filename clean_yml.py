@@ -11,8 +11,12 @@ def is_platform_specific(package_line):
     return any(keyword in line for keyword in platform_keywords)
 
 def clean_yml(input_file, output_file):
-    with open(input_file, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    try:
+        with open(input_file, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    except UnicodeDecodeError:
+        with open(input_file, "r", encoding="latin1") as f:
+            lines = f.readlines()
 
     cleaned_lines = []
     pip_block = False
