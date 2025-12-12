@@ -25,7 +25,6 @@ conda env create -f environment_name.yml
 ## computational_social_science
 all package is run on cpu (intel or amd)
 
-
 ## deep_learning
 install the cuda 12.9 to runing pytorch on nvidia 50 series gpu
 machine learning and deep learning
